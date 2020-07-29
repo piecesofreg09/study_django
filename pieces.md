@@ -26,3 +26,11 @@ https://stackoverflow.com/questions/1941812/django-error-got-multiple-values-for
 
 Don't use explicitly named keywords argument to pass data
 a function signature of `func(a, b=123, *kwargs)` with a call `func(14, b=100)` will result in the variable `b` being passed to the function twice, and invoke `__init__() got multiple values for keyword argument` error.
+
+7. Test related
+
+You should test all aspects of your own code, but not any libraries or functionality provided as part of Python or Django.
+
+So for example, consider the Author model defined below. You don't need to explicitly test that first_name and last_name have been stored properly as CharField in the database because that is something defined by Django (though of course in practice you will inevitably test this functionality during development). Nor do you need to test that the date_of_birth has been validated to be a date field, because that is again something implemented in Django.
+
+However you should check the text used for the labels (First name, Last name, Date of birth, Died), and the size of the field allocated for the text (100 chars), because these are part of your design and something that could be broken/changed in future.
