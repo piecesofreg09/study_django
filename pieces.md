@@ -19,3 +19,10 @@ Django provides almost everything you need to create authentication pages to han
 5. Forms
 
 Important: While you can also access the form data directly through the request (for example, request.POST['renewal_date'] or request.GET['renewal_date'] if using a GET request), this is NOT recommended. The cleaned data is sanitized, validated, and converted into Python-friendly types.
+
+6. Forms with customized constructor
+
+https://stackoverflow.com/questions/1941812/django-error-got-multiple-values-for-keyword-argument
+
+Don't use explicitly named keywords argument to pass data
+a function signature of `func(a, b=123, *kwargs)` with a call `func(14, b=100)` will result in the variable `b` being passed to the function twice, and invoke `__init__() got multiple values for keyword argument` error.
