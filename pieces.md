@@ -40,3 +40,7 @@ However you should check the text used for the labels (First name, Last name, Da
 We can't get the `verbose_name` directly using `author.first_name.verbose_name`, because author.first_name is a string (not a handle to the `first_name` object that we can use to access its properties). Instead we need to use the author's `_meta` attribute to get an instance of the field and use that to query for the additional information.
 
 We chose to use `assertEquals(field_label,'first name')` rather than `assertTrue(field_label == 'first name')`. The reason for this is that if the test fails the output for the former tells you what the label actually was, which makes debugging the problem just a little easier.
+
+9. `__init__.py`
+
+This file makes the directory as a package. Hence you can use `.` notation to access files in this directory.
