@@ -44,3 +44,7 @@ We chose to use `assertEquals(field_label,'first name')` rather than `assertTrue
 9. `__init__.py`
 
 This file makes the directory as a package. Hence you can use `.` notation to access files in this directory.
+
+10. Testing views: `response.context`
+
+The most interesting variable we demonstrate above is `response.context`, which is the context variable passed to the template by the view. This is incredibly useful for testing, because it allows us to confirm that our template is getting all the data it needs. In other words we can check that we're using the intended template and what data the template is getting, which goes a long way to verifying that any rendering issues are solely due to template.
